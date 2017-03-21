@@ -2,7 +2,6 @@
 #include "Internal.h"
 
 typedef void* Surface_t;
-
 typedef void(__fastcall *DrawSetColor_t)(Surface_t, void*, int, int, int, int);
 typedef void(__fastcall *DrawFilledRect_t)(Surface_t, void*, int, int, int, int);
 typedef void(__fastcall *DrawOutlinedRect_t)(Surface_t, void*, int, int, int, int);
@@ -19,7 +18,7 @@ typedef void(__fastcall *PlaySound_t)(Surface_t, void*, const char*);
 typedef void(__fastcall *GetCursorPos_t)(Surface_t, void*, int*, int*);
 typedef void(__fastcall *SetCursorPos_t)(Surface_t, void*, int, int);
 
-static Surface_t surface;
+static Surface_t surface = NULL;
 
 void Surface_Initialize()
 {
