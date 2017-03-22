@@ -9,7 +9,7 @@ CreateInterface_t CreateInterfaceFactory(const char *moduleName)
 
 void* GetVMTFunc(void* class, size_t index, size_t vmtIndex)
 {
-    size_t offset = vmtIndex * sizeof(void**);
+    ptrdiff_t offset = vmtIndex * sizeof(void**);
     void** vmt = *((void***)class + offset);
     return vmt[index];
 }
